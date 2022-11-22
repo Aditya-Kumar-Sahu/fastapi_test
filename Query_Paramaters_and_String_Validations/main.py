@@ -8,7 +8,7 @@ app = FastAPI()
 
 
 @app.get("/items/")
-async def read_items(q: Union[str, None] = Query(default=...,min_length=5, max_length=20)):
+async def read_items(q: Union[str, None] = Query(default=...,min_length=5, max_length=20)):     # ... means required field
     results = {"items": [{"item_id": "Foo"}, {"ittem_id": "Bar"}]}
     if q:
         results.update({"q": q})
